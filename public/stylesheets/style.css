@@ -341,7 +341,8 @@ padding-bottom: 56.25%;
 padding-top: 60px; overflow: hidden;
 }
 
-
+/* Estilos para videos
+-------------------------------------------------- */
 .responsive-video iframe,
 .responsive-video object,
 .responsive-video embed {
