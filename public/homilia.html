@@ -48,9 +48,34 @@
 
     <div class="container">
     	<h2>Homilía dominical</h2>
-         <p>
-        <!-- *** Escribir Aquí la informacion que se requiera *** -->
-        </p>
+        <div>
+             <div class="col-sm-6 col-xs-12">
+                 <p>
+                <!-- *** Escribir Aquí la informacion que se requiera *** -->
+                     <a id="referencia" href="https://www.w3schools.com/html/">Homlía de la semana</a> 
+                     <button type="button" class="btn btn-primary btn-sm"  onclick="mostrar()">Cambiar link</button>
+                </p>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div id=formulario style='display:none;'>
+                     <form action="./homilia.html">
+                      <div class="form-group">
+                        <label for="email">Usuario</label>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Contraseña</label>
+                        <input type="password" class="form-control" id="pwd">
+                      </div>
+                      <div class="form-group">
+                        <label >Nuevo link</label>
+                        <input class="form-control" id="link">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
     </div>
     <br>
     <br>
@@ -70,5 +95,6 @@
 
      <script src="javascripts/jquery.min.js"></script>
      <script src="javascripts/bootstrap.min.js"></script>
+      <script src="javascripts/javascript.js"></script>
  </body>
  </html> 
