@@ -5,22 +5,26 @@ function mostrar(){
 window.onload = function(){
 
 	$.ajax({
-		url: 'users/homilia'
+		url: 'users/arquidiocesis'
 	}).then(function(data) {
 		console.log(data);
+		console.log(window.location);
 		url.setAttribute("href",data);
 		url.innerHTML="";  
-		url.innerHTML="<h3>Click para ver el homilía de la semana<h3>";  
+		url.innerHTML="<h3>Click para ver el Arquidiócesis<h3>";  
 	});
+
+	//url.innerHTML="";
+
 } 
 
 $("#enviar").click(function(){
 	var dato=document.getElementById("datos");
 	console.log(dato[2].value);
-	$.post( "users/homilia", { usuario: dato[0].value, contrasena: dato[1].value,link: dato[2].value })
+	$.post( "users/arquidiocesis", { usuario: dato[0].value, contrasena: dato[1].value,link: dato[2].value })
 	.done(function( data ) {
 		console.log( "Data Loaded: " + data );
-		window.location="homilia.html";
+		window.location="arquidiocesis.html";
 	});
 });
 
