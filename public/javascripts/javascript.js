@@ -1,46 +1,36 @@
-
 function mostrar(){
-  document.getElementById('formulario').style.display = 'block';
+	document.getElementById('formulario').style.display = 'block';
 }
 
-function datos(){
+window.onload = function(){
+
+	$.ajax({
+		url: 'users/link'
+	}).then(function(data) {
+		console.log(data);
+		console.log(window.location);
+		url.setAttribute("href",data);
+		url.innerHTML="";  
+		url.innerHTML="<h3>Click para ver el homilía de la semana<h3>";  
+	});
+
+	//url.innerHTML="";
+
+} 
+
+$("#enviar").click(function(){
 	var dato=document.getElementById("datos");
-	 window.open("homilia.html?usuario="+dato[0].value+"&contrasena="+dato[1].value+"&url="+dato[2].value);
-}
-
-$(document).ready(function() {
-    var txtFile = "http://localhost:3000/url.txt"
-	var file = new File(txtFile);
-
-	file.open("r"); // open file with read access
-	var str = "";
-	while (!file.eof) {
-		// read each line of text
-		str += file.readln() + "\n";
-	}
-	file.close(); 
-
-	console.log(str);
-
-	var usuario=getParameterByName("usuario");
-	var contrasena=getParameterByName("contrasena");
-	var url=getParameterByName("url");
-
-	if(usuario=="santuario" && contrasena=="juquila"){
-		console.log("usuario corecto");
-		var link= document.getElementById("referencia");
-	link.setAttribute("href",url);
-	}
-
-
+	console.log(dato[2].value);
+	$.post( "users/login", { usuario: dato[0].value, contrasena: dato[1].value,link: dato[2].value })
+	.done(function( data ) {
+		console.log( "Data Loaded: " + data );
+		window.location="homilia.html";
+	});
 });
 
-
 function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-
-

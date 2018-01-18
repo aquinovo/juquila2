@@ -49,9 +49,36 @@
      <!-- *** CONTAINER *** -->
     <div class="container">
     	<h2>Arquidiócesis</h2>
-        <p>
-        <!-- *** Escribir Aquí la informacion que se requiera *** -->
-        </p>
+        <div>
+             <div class="col-sm-6 col-xs-12">
+                 <p>
+                <!-- *** Escribir Aquí la informacion que se requiera *** -->
+                     <a id="url" href="https://www.w3schools.com/html/" target="_blank">Click para ver el homilía de la semana</a> 
+                     <br>
+                     <br>
+                     <button type="button" class="btn btn-primary btn-sm"  onclick="mostrar()">Cambiar link</button>
+                </p>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div id="formulario" style='display:none;'>
+                     <form id="datos">
+                      <div class="form-group">
+                        <label for="user">Usuario</label>
+                        <input class="form-control" id="user">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Contraseña</label>
+                        <input type="password" class="form-control" id="pwd">
+                      </div>
+                      <div class="form-group">
+                        <label >Nuevo link</label>
+                        <input class="form-control" id="link">
+                      </div>
+                    </form> 
+                    <button id="enviar" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
     <br>
     <br>
@@ -69,7 +96,9 @@
     </footer>
      <!-- *** COPYRIGHT END *** -->
 
-     <script src="javascripts/jquery.min.js"></script>
+      <script src="javascripts/jquery.min.js"></script>
      <script src="javascripts/bootstrap.min.js"></script>
+      <script src="javascripts/javascript.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  </body>
  </html> 
