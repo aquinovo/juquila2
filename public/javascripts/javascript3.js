@@ -11,7 +11,7 @@ window.onload = function(){
 		console.log(window.location);
 		url.setAttribute("href",data);
 		url.innerHTML="";  
-		url.innerHTML="<h3>Click para ver el Evangelio<h3>";  
+		url.innerHTML="<h3>Click para ver evangelio<h3>";  
 	});
 
 	//url.innerHTML="";

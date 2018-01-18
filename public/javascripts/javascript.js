@@ -10,7 +10,7 @@ window.onload = function(){
 		console.log(data);
 		url.setAttribute("href",data);
 		url.innerHTML="";  
-		url.innerHTML="<h3>Click para ver la homilía de la semana<h3>";  
+		url.innerHTML="<h3>Click para ver homilía dominical<h3>";  
 	});
 } 
 
